@@ -1,0 +1,159 @@
+/* TallerPro - Pipeline (Kanban) */
+
+.kanban-tablero {
+    display: flex;
+    gap: var(--espacio-md);
+    overflow-x: auto;
+    padding-bottom: var(--espacio-md);
+    min-height: calc(100vh - 200px);
+}
+
+.kanban-columna {
+    flex: 0 0 240px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-fondo-alt);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-lg);
+    max-height: calc(100vh - 180px);
+}
+
+.kanban-columna-header {
+    padding: var(--espacio-md);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.kanban-columna-titulo {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.kanban-columna-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.kanban-columna-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--espacio-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+    min-height: 60px;
+    transition: background-color var(--transicion);
+}
+
+.kanban-columna-body.drag-over {
+    background: var(--color-primario-suave);
+    border-radius: var(--radio-md);
+}
+
+.kanban-columna-body.drag-invalid {
+    background: var(--color-error-suave);
+    border-radius: var(--radio-md);
+}
+
+/* Tarjetas Kanban */
+.kanban-tarjeta {
+    background: var(--tarjeta-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-base);
+    padding: var(--espacio-md);
+    cursor: pointer;
+    transition: box-shadow var(--transicion), border-color var(--transicion), opacity var(--transicion);
+    border-left: 3px solid var(--color-info);
+}
+.kanban-tarjeta:hover {
+    box-shadow: var(--sombra-md);
+    border-color: var(--color-primario);
+}
+.kanban-tarjeta.arrastrando {
+    opacity: 0.4;
+}
+
+/* Prioridades */
+.kanban-tarjeta.prioridad-baja { border-left-color: var(--color-prioridad-baja); }
+.kanban-tarjeta.prioridad-normal { border-left-color: var(--color-prioridad-normal); }
+.kanban-tarjeta.prioridad-alta { border-left-color: var(--color-prioridad-alta); }
+.kanban-tarjeta.prioridad-urgente { border-left-color: var(--color-prioridad-urgente); }
+
+.kanban-tarjeta-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--espacio-xs);
+}
+
+.kanban-tarjeta-matricula {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+.kanban-tarjeta-empresa {
+    font-size: var(--font-size-xs);
+    color: var(--color-texto-secundario);
+    margin-bottom: var(--espacio-xs);
+}
+
+.kanban-tarjeta-desc {
+    font-size: var(--font-size-xs);
+    color: var(--color-texto-terciario);
+    margin-bottom: var(--espacio-sm);
+}
+
+.kanban-tarjeta-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-xs);
+    flex-wrap: wrap;
+}
+
+.kanban-tarjeta-acciones {
+    display: flex;
+    gap: var(--espacio-xs);
+    margin-top: var(--espacio-sm);
+    padding-top: var(--espacio-sm);
+    border-top: 1px solid var(--color-borde-suave);
+    flex-wrap: wrap;
+}
+
+/* Mobile: ocultar tablero, mostrar tabs */
+.kanban-mobile {
+    display: none;
+}
+
+.kanban-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: var(--espacio-xs);
+}
+
+.kanban-mobile-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+}
+
+@media (max-width: 1024px) {
+    .kanban-columna {
+        flex: 0 0 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kanban-tablero {
+        display: none;
+    }
+    .kanban-mobile {
+        display: block;
+    }
+    .kanban-tarjeta {
+        border-left-width: 4px;
+    }
+}
