@@ -13,6 +13,7 @@ window.TallerPro.Views = window.TallerPro.Views || {};
     const Toast = () => window.TallerPro.Toast;
 
     let contenedorRef = null;
+    const filtroDebounced = Utils().debounce((valor) => renderLista(valor), 300);
 
     function render(contenedor) {
         contenedorRef = contenedor;
@@ -109,8 +110,7 @@ window.TallerPro.Views = window.TallerPro.Views || {};
 
     function manejarInput(e) {
         if (e.target.id === 'filtro-empresas') {
-            const debouncedRender = Utils().debounce((valor) => renderLista(valor), 300);
-            debouncedRender(e.target.value);
+            filtroDebounced(e.target.value);
         }
     }
 

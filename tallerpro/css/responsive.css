@@ -2,13 +2,14 @@
    TallerPro - Responsive
    ============================================= */
 
-/* Tablet */
+/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
     .contenido-principal {
         margin-left: 0;
     }
     .sidebar {
         transform: translateX(-100%);
+        z-index: 95;
     }
     .sidebar.abierto {
         transform: translateX(0);
@@ -19,12 +20,35 @@
     .form-fila {
         grid-template-columns: 1fr;
     }
+    .kanban-columna {
+        flex: 0 0 200px;
+    }
+    .detalle-grid {
+        grid-template-columns: 1fr;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .pipeline-resumen-item {
+        grid-template-columns: 110px 1fr 30px;
+    }
+    .vista-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .vista-header-acciones {
+        width: 100%;
+        flex-wrap: wrap;
+    }
 }
 
-/* Mobile */
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
     .topbar-center {
         display: none;
+    }
+    .topbar {
+        padding: 0 var(--espacio-md);
     }
     .contenido-principal {
         margin-left: 0;
@@ -40,6 +64,21 @@
     .vista-header h1 {
         font-size: var(--font-size-xl);
     }
+
+    /* Modal */
+    .modal {
+        margin: var(--espacio-sm);
+        max-height: 92vh;
+        border-radius: var(--radio-lg);
+    }
+    .modal-overlay {
+        padding: var(--espacio-sm);
+    }
+    .modal-header, .modal-body, .modal-footer {
+        padding: var(--espacio-base);
+    }
+
+    /* Toast */
     .toast-container {
         left: var(--espacio-base);
         right: var(--espacio-base);
@@ -48,8 +87,129 @@
     .toast {
         max-width: 100%;
     }
-    .modal {
-        margin: var(--espacio-base);
-        max-height: 90vh;
+
+    /* Tabla responsive */
+    .tabla th, .tabla td {
+        padding: var(--espacio-sm) var(--espacio-md);
+        font-size: var(--font-size-xs);
+    }
+    .tabla-wrapper {
+        border-radius: var(--radio-base);
+    }
+
+    /* Kanban mobile: ocultar tablero desktop, mostrar tabs */
+    .kanban-tablero {
+        display: none;
+    }
+    .kanban-mobile {
+        display: block;
+    }
+    .kanban-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        gap: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+    .kanban-tabs .tab {
+        flex-shrink: 0;
+        padding: var(--espacio-sm) var(--espacio-md);
+        font-size: var(--font-size-xs);
+    }
+    .kanban-tarjeta {
+        border-left-width: 4px;
+    }
+
+    /* Calendario */
+    .calendario-grid {
+        border-radius: var(--radio-base);
+    }
+    .calendario-dia {
+        min-height: 50px;
+        padding: 4px;
+    }
+    .calendario-dia-numero {
+        font-size: var(--font-size-xs);
+    }
+    .calendario-dia-citas {
+        display: none;
+    }
+    .calendario-dia.con-citas::after {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-primario);
+        margin-top: 4px;
+    }
+
+    /* Agenda controles */
+    .agenda-controles {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .agenda-nav {
+        justify-content: center;
+    }
+    .agenda-titulo {
+        font-size: var(--font-size-md);
+        min-width: auto;
+    }
+
+    /* Semana grid - hacer scrollable */
+    .semana-grid {
+        font-size: var(--font-size-xs);
+        max-height: 400px;
+    }
+
+    /* Detalle trabajo - botones mover estado */
+    .btn-mover-estado {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Cards */
+    .card {
+        padding: var(--espacio-base);
+        border-radius: var(--radio-base);
+    }
+
+    /* Contacto/vehículo items */
+    .contacto-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--espacio-xs);
+    }
+    .contacto-datos {
+        text-align: left;
+    }
+
+    /* Recambio items */
+    .recambio-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .recambio-item .form-select {
+        width: 100% !important;
+    }
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+    .vista-header h1 {
+        font-size: var(--font-size-lg);
+    }
+    .btn {
+        padding: var(--espacio-xs) var(--espacio-md);
+        font-size: var(--font-size-xs);
+    }
+    .topbar-logo span {
+        display: none;
+    }
+    .bottom-tab span {
+        font-size: 10px;
+    }
+    .form-fila {
+        grid-template-columns: 1fr;
     }
 }
