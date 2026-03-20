@@ -1,0 +1,55 @@
+/* =============================================
+   TallerPro - Responsive
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .contenido-principal {
+        margin-left: 0;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.abierto {
+        transform: translateX(0);
+    }
+    .sidebar-toggle {
+        display: flex;
+    }
+    .form-fila {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .topbar-center {
+        display: none;
+    }
+    .contenido-principal {
+        margin-left: 0;
+        padding: var(--espacio-base);
+        padding-bottom: calc(var(--bottomtab-alto) + var(--espacio-base));
+    }
+    .sidebar {
+        display: none;
+    }
+    .bottom-tabs {
+        display: flex;
+    }
+    .vista-header h1 {
+        font-size: var(--font-size-xl);
+    }
+    .toast-container {
+        left: var(--espacio-base);
+        right: var(--espacio-base);
+        bottom: calc(var(--bottomtab-alto) + var(--espacio-base));
+    }
+    .toast {
+        max-width: 100%;
+    }
+    .modal {
+        margin: var(--espacio-base);
+        max-height: 90vh;
+    }
+}

@@ -1,0 +1,211 @@
+/* TallerPro - Agenda */
+
+.agenda-controles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--espacio-xl);
+    flex-wrap: wrap;
+    gap: var(--espacio-md);
+}
+
+.agenda-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+}
+
+.agenda-titulo {
+    font-size: var(--font-size-lg);
+    min-width: 180px;
+    text-align: center;
+}
+
+/* Calendario Mes */
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: var(--color-borde);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-lg);
+    overflow: hidden;
+}
+
+.calendario-header {
+    padding: var(--espacio-sm);
+    text-align: center;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-texto-terciario);
+    background: var(--color-superficie);
+}
+
+.calendario-dia {
+    padding: var(--espacio-sm);
+    min-height: 80px;
+    background: var(--color-superficie);
+    cursor: pointer;
+    transition: background-color var(--transicion);
+}
+.calendario-dia:hover {
+    background: var(--color-superficie-hover);
+}
+.calendario-dia.vacio {
+    background: var(--color-fondo);
+    cursor: default;
+}
+.calendario-dia.hoy {
+    background: var(--color-primario-suave);
+}
+
+.calendario-dia-numero {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+.calendario-dia.hoy .calendario-dia-numero {
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+.calendario-dia-citas {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: var(--espacio-xs);
+}
+
+.calendario-cita-punto {
+    font-size: var(--font-size-xs);
+    color: var(--color-primario);
+    background: var(--color-primario-suave);
+    border-radius: var(--radio-sm);
+    padding: 1px 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calendario-cita-mas {
+    font-size: var(--font-size-xs);
+    color: var(--color-texto-terciario);
+}
+
+/* Vista Semana */
+.semana-grid {
+    display: grid;
+    grid-template-columns: 60px repeat(7, 1fr);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-lg);
+    overflow: auto;
+    max-height: 600px;
+}
+
+.semana-header-vacio {
+    background: var(--color-superficie);
+    border-bottom: 1px solid var(--color-borde);
+    border-right: 1px solid var(--color-borde);
+}
+
+.semana-header {
+    padding: var(--espacio-sm);
+    text-align: center;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    background: var(--color-superficie);
+    border-bottom: 1px solid var(--color-borde);
+    border-right: 1px solid var(--color-borde);
+}
+.semana-header:last-child { border-right: none; }
+.semana-header.hoy { color: var(--color-primario); background: var(--color-primario-suave); }
+
+.semana-hora {
+    padding: var(--espacio-xs) var(--espacio-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-texto-terciario);
+    text-align: right;
+    border-right: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--color-borde-suave);
+    background: var(--color-superficie);
+}
+
+.semana-celda {
+    padding: 2px;
+    border-right: 1px solid var(--color-borde-suave);
+    border-bottom: 1px solid var(--color-borde-suave);
+    min-height: 30px;
+    cursor: pointer;
+}
+.semana-celda:hover { background: var(--color-superficie-hover); }
+
+.semana-cita {
+    font-size: var(--font-size-xs);
+    padding: 2px 4px;
+    background: var(--color-primario-suave);
+    color: var(--color-primario);
+    border-radius: var(--radio-sm);
+    margin-bottom: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+/* Vista Día */
+.dia-grid {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-lg);
+    overflow: hidden;
+}
+
+.dia-fila {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    border-bottom: 1px solid var(--color-borde-suave);
+}
+.dia-fila:last-child { border-bottom: none; }
+
+.dia-hora {
+    padding: var(--espacio-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-texto-terciario);
+    text-align: right;
+    border-right: 1px solid var(--color-borde);
+    background: var(--color-superficie);
+}
+
+.dia-contenido {
+    padding: var(--espacio-xs) var(--espacio-sm);
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-xs);
+}
+
+.dia-cita {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--espacio-xs) var(--espacio-sm);
+    background: var(--color-primario-suave);
+    border-left: 3px solid var(--color-primario);
+    border-radius: var(--radio-sm);
+}
+
+.dia-slot-vacio {
+    width: 100%;
+    text-align: left;
+    font-size: var(--font-size-xs);
+    opacity: 0;
+    transition: opacity var(--transicion);
+}
+.dia-fila:hover .dia-slot-vacio {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .calendario-dia { min-height: 50px; padding: 4px; }
+    .calendario-dia-citas { display: none; }
+    .semana-grid { grid-template-columns: 50px repeat(7, 1fr); }
+}

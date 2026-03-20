@@ -1,0 +1,100 @@
+/* TallerPro - Empresas */
+
+.detalle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-lg);
+}
+
+.detalle-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--espacio-sm) 0;
+    border-bottom: 1px solid var(--color-borde-suave);
+}
+.detalle-campo:last-child { border-bottom: none; }
+
+.detalle-label {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--color-texto-terciario);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.detalle-valor {
+    font-size: var(--font-size-sm);
+    color: var(--color-texto);
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-md);
+    padding: var(--espacio-sm) 0;
+    border-bottom: 1px solid var(--color-borde-suave);
+}
+.contacto-item:last-child { border-bottom: none; }
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.contacto-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+}
+
+.vehiculo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--espacio-sm) 0;
+    border-bottom: 1px solid var(--color-borde-suave);
+    cursor: pointer;
+}
+.vehiculo-item:last-child { border-bottom: none; }
+
+.vehiculo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Recambio item (trabajo detalle) */
+.recambio-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--espacio-sm) 0;
+    border-bottom: 1px solid var(--color-borde-suave);
+    gap: var(--espacio-md);
+}
+.recambio-item:last-child { border-bottom: none; }
+
+.recambio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+/* Historial */
+.historial-item {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-md);
+    padding: var(--espacio-xs) 0;
+}
+
+@media (max-width: 768px) {
+    .detalle-grid {
+        grid-template-columns: 1fr;
+    }
+}
