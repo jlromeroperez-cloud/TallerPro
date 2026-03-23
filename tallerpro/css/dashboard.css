@@ -1,0 +1,100 @@
+/* TallerPro - Dashboard */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-lg);
+}
+
+.dashboard-card-ancho {
+    grid-column: 1 / -1;
+}
+
+.dashboard-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--espacio-sm) 0;
+    border-bottom: 1px solid var(--color-borde-suave);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transicion);
+}
+.dashboard-item:last-child { border-bottom: none; }
+.dashboard-item:hover { opacity: 0.8; }
+
+.dashboard-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dashboard-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-md);
+    padding: var(--espacio-sm) 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard-stat-numero {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.dashboard-stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-texto-secundario);
+}
+
+/* Pipeline resumen */
+.pipeline-resumen {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+}
+
+.pipeline-resumen-item {
+    display: grid;
+    grid-template-columns: 140px 1fr 40px;
+    align-items: center;
+    gap: var(--espacio-md);
+}
+
+.pipeline-resumen-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-texto-secundario);
+}
+
+.pipeline-resumen-barra {
+    height: 8px;
+    background: var(--color-superficie-hover);
+    border-radius: var(--radio-full);
+    overflow: hidden;
+}
+
+.pipeline-resumen-relleno {
+    height: 100%;
+    background: var(--color-primario);
+    border-radius: var(--radio-full);
+    transition: width var(--transicion-lenta);
+    min-width: 4px;
+}
+
+.pipeline-resumen-count {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: right;
+    color: var(--color-texto);
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .pipeline-resumen-item {
+        grid-template-columns: 100px 1fr 30px;
+    }
+}

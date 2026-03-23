@@ -1,0 +1,137 @@
+/* =============================================
+   TallerPro - Variables CSS (Sistema de Temas)
+   ============================================= */
+
+:root {
+    /* Tipografía */
+    --font-familia: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.8125rem;
+    --font-size-base: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+
+    /* Espaciado */
+    --espacio-xs: 0.25rem;
+    --espacio-sm: 0.5rem;
+    --espacio-md: 0.75rem;
+    --espacio-base: 1rem;
+    --espacio-lg: 1.25rem;
+    --espacio-xl: 1.5rem;
+    --espacio-2xl: 2rem;
+    --espacio-3xl: 3rem;
+
+    /* Bordes */
+    --radio-sm: 4px;
+    --radio-md: 6px;
+    --radio-base: 8px;
+    --radio-lg: 12px;
+    --radio-xl: 16px;
+    --radio-full: 9999px;
+
+    /* Sombras */
+    --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --sombra-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+
+    /* Transiciones */
+    --transicion: 0.2s ease;
+    --transicion-lenta: 0.3s ease;
+
+    /* Layout */
+    --sidebar-ancho: 220px;
+    --sidebar-ancho-colapsado: 60px;
+    --topbar-alto: 56px;
+    --bottomtab-alto: 60px;
+
+    /* Colores de acento (compartidos entre temas) */
+    --color-primario: #E87B5F;
+    --color-primario-hover: #D4654A;
+    --color-primario-activo: #C05A42;
+    --color-primario-suave: rgba(232, 123, 95, 0.15);
+    --color-primario-texto: #ffffff;
+
+    /* Colores semánticos */
+    --color-exito: #4CAF50;
+    --color-exito-suave: rgba(76, 175, 80, 0.15);
+    --color-advertencia: #FFA726;
+    --color-advertencia-suave: rgba(255, 167, 38, 0.15);
+    --color-error: #EF5350;
+    --color-error-suave: rgba(239, 83, 80, 0.15);
+    --color-info: #42A5F5;
+    --color-info-suave: rgba(66, 165, 245, 0.15);
+
+    /* Prioridades */
+    --color-prioridad-baja: #66BB6A;
+    --color-prioridad-normal: #42A5F5;
+    --color-prioridad-alta: #FFA726;
+    --color-prioridad-urgente: #EF5350;
+}
+
+/* =============================================
+   Tema Oscuro (estilo Claude Android)
+   ============================================= */
+.tema-oscuro {
+    --color-fondo: #1a1a2e;
+    --color-fondo-alt: #16213e;
+    --color-superficie: #1f2b47;
+    --color-superficie-elevada: #253352;
+    --color-superficie-hover: #2a3a5c;
+    --color-borde: #2a3a5c;
+    --color-borde-suave: #222d45;
+    --color-texto: #e8e8f0;
+    --color-texto-secundario: #a0a0b8;
+    --color-texto-terciario: #6a6a82;
+    --color-texto-invertido: #1a1a2e;
+    --sidebar-fondo: #0f1628;
+    --sidebar-hover: #1a2340;
+    --sidebar-activo: #1f2b47;
+    --topbar-fondo: #121a30;
+    --tarjeta-fondo: #1f2b47;
+    --input-fondo: #162038;
+    --input-borde: #2a3a5c;
+    --input-foco: #E87B5F;
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+    --scrollbar-track: #1a1a2e;
+    --scrollbar-thumb: #2a3a5c;
+    --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --sombra-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================================
+   Tema Claro (estilo Claude Desktop)
+   ============================================= */
+.tema-claro {
+    --color-fondo: #f5f5f0;
+    --color-fondo-alt: #ffffff;
+    --color-superficie: #ffffff;
+    --color-superficie-elevada: #ffffff;
+    --color-superficie-hover: #f0f0eb;
+    --color-borde: #e0e0d8;
+    --color-borde-suave: #eaeae4;
+    --color-texto: #1a1a1a;
+    --color-texto-secundario: #666666;
+    --color-texto-terciario: #999999;
+    --color-texto-invertido: #ffffff;
+    --sidebar-fondo: #ffffff;
+    --sidebar-hover: #f5f5f0;
+    --sidebar-activo: #f0ebe4;
+    --topbar-fondo: #ffffff;
+    --tarjeta-fondo: #ffffff;
+    --input-fondo: #f8f8f5;
+    --input-borde: #d8d8d0;
+    --input-foco: #E87B5F;
+    --modal-overlay: rgba(0, 0, 0, 0.4);
+    --scrollbar-track: #f0f0eb;
+    --scrollbar-thumb: #c8c8c0;
+    --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --sombra-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12);
+}
